@@ -11,7 +11,7 @@ class rabbitmq (
         ensure  => present,
         owner   => 'root',
         group   => 'root',
-        content => template('queue/rabbitmq.config.erb'),
+        content => template('rabbitmq/rabbitmq.config.erb'),
         notify  => Service['rabbitmq-server'],
     }
 
@@ -19,7 +19,7 @@ class rabbitmq (
         ensure  => present,
         owner   => 'root',
         group   => 'root',
-        content => template('queue/enabled_plugins.erb'),
+        content => template('rabbitmq/enabled_plugins.erb'),
         notify  => Service['rabbitmq-server'],
     }
 
